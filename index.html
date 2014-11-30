@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Relocation</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnGpdOZTcLzZMPi2DkuRN6-KWo6d3tDF8&v=3.exp"></script>
+    <script src="lib/papaparse.min.js"></script>
+	<script src="js/relocationWithGoogleService.js"></script>
+	<style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #map-canvas {
+        height: 100%;
+        width: 50%;
+      }
+      #content-pane {
+        float:right;
+        width:48%;
+        padding-left: 2%;
+      }
+      #outputDiv {
+        font-size: 11px;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="content-pane">
+      <div id="inputs">
+        <pre>
+ 
+	To     :<input id="fromAdr" style="width:270px" type="textbox" value="4 Av des louvresses, 93622 Gennevilliers">
+			
+	Select file with employe location :<input id="uploadInput" type="file" name="myFiles" onchange="onFileLoad();" multiple>  
+        </pre>
+		<form action=""> 
+				<input type="radio" Name="travelMode" Id="Auto" value="Auto" >Auto<br>
+				<input type="radio" Name="travelMode" Id="Rail" value="Rail" checked>Rail
+		</form>
+		<p><button type="button" onClick="onStore();">Save on file</button> </p>
+
+      </div>
+      <div id="outputDiv"></div>
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
+
